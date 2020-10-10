@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Kavish">
+    <meta name="description" content="Personal blog by Kavish #kid #python #programming">
+    <title>Kavish's blog </title>
+
+    <link rel="icon" href="/static/favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+    <link rel="stylesheet" href="/static/milligram.min.css">
+    <link rel="stylesheet" href="/static/main.css">
+    <link rel="stylesheet" href="/static/default.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="https://unpkg.com/stackedit-js@1.0.7/docs/lib/stackedit.min.js"></script>
+
+    <script>
+
+        function httpGetAsync(theUrl, callback) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
+                    console.log("TEXT is ",xmlHttp.responseText);
+                    callback(xmlHttp.responseText);
+                }
+                    
+            }
+            xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+            // xmlHttp.send(null);
+            console.log("Downloaded raw... from ",theUrl);
+        }
+
+        function httpSetAsync(theUrl, callback,content) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", theUrl, false);
+            //Send the proper header information along with the request
+            xhr.setRequestHeader("Content-Type", "text/plain");
+            xhr.onreadystatechange = function () { // Call a function when the state changes.
+                console.log("POST response status ",this.status);
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    // Request finished. Do processing here.
+                    console.log("Done .. posting to ",theUrl,this.responseURL);
+                    callback(xhr.responseText);
+                }
+            
+            }
+            xhr.send(content);
+        }
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <main class="wrapper">
+
+        <nav class="navigation">
+            <section class="container">
+                <a class="navigation-title" style="width:24px;" href="/">
+                    <img src="/static/favicon.png" alt="" width="24px">
+
+
+                    <h1 class="title">Kavish's Blog {{login|safe}} </h1>
+                </a>
+                <ul class="navigation-list float-right">
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="/aboutme" target="_self">About Me</a>
+                    </li>
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="#popover-support" data-popover>Connect</a>
+                        <div class="popover" id="popover-support">
+                            <ul class="popover-list">
+                                <li class="popover-item"><a class="popover-link" target="_self"
+                                        href="https://github.com/kavishdev" title="Github">Github</a></li>
+                                <li class="popover-item"><a class="popover-link" target="_self"
+                                        href="https://kavishdevar.wordpress.com" title="Wordpress">Wordpress</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="navigation-item">
+                        <a class="navigation-link" href="#popover-support2" data-popover>Python</a>
+                        <div class="popover" id="popover-support2">
+                            <ul class="popover-list">
+                                <!-- <li class="popover-item"><a class="popover-link" target="_self" href="/python?session=1"
+                                        title="Session 1">Session 1</a></li>
+                                <li class="popover-item"><a class="popover-link" target="_self" href="/python?session=2"
+                                        title="Session 2">Session 2</a></li> -->
+
+                                        {% for item in menulist %}
+                                        <li class="popover-item"><a class="popover-link" target="_self" href="/python/{{loop.index}}" title="Session {{loop.index}}">Session {{loop.index}}</a></li>
+                                        {% endfor %}
+    
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+        <br>
+            
+        <section class="container" id="mdcontent">
+            <div class="alert alert-info" id="flash">
+                              </div>
+            <br>
+            <button class="button button-outline" onclick="SaveToServer()"> Save</button>
+            <!-- <div class="stackedit-button-wrapper"></div> -->
+            <a href="javascript:void(0);" onclick="ShowEditor();"><img src="/static/icon.svg" width=16>Edit with StackEdit</a> 
+            <textarea id="mdeditor" style="height:auto">
+{{text}}
+                    </textarea>
+
+
+        </section>
+
+        <footer class="footer">
+            <section class="container">
+            </section>
+        </footer>
+
+    </main>
+
+    <script src="/static/main.js"></script>
+
+    <script>
+     
+        const delement = document.getElementById("mdeditor");
+        var simplemde;
+        url = "{{theurl}}";
+        // function setHeight(){
+        delement.style.height = delement.scrollHeight+'px';
+        // }
+        // setHeight();
+        // const el = document.getElementById('#mdcontent');
+      const stackedit = new Stackedit({url:'https://stackedit.io/app'});
+     
+      function ShowEditor(){
+        stackedit.openFile({
+        name: 'Filename', // with an optional filename
+        content: {
+          text: delement.value // and the Markdown content.
+        }
+      });
+    
+
+      }
+            // Listen to StackEdit events and apply the changes to the textarea.
+      stackedit.on('fileChange', (file) => {
+        delement.value = file.content.text;
+      });
+
+        function setEditor(mdcontent) {
+            // console.log("Received raw ",mdcontent);
+            delement.value=mdcontent;
+            // simplemde = new SimpleMDE({ element: delement });
+            // simplemde.value(mdcontent);
+        }
+        httpGetAsync(url, setEditor);
+        function SaveToServer() {            
+            
+            httpSetAsync(window.location.pathname, dummyfn, delement.value);
+            // httpSetAsync(window.location.pathname, dummyfn, simplemde.value());
+        }
+        function dummyfn(p){
+            // felement=document.getElementById("flash");
+            
+            // felement.innerHTML = "<strong>Info!</strong>"+p;
+            console.log("Response is this ",p);
+            window.location=p;
+            
+        }
+
+    </script>
+</body>
+
+</html>
