@@ -1,5 +1,5 @@
 ---
-layout: index2
+layout: index
 title: My Virtual Android
 ---
 My Virtual Android  

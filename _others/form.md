@@ -1,6 +1,12 @@
-<!DOCTYPE html>
+---
+layout: index
+title: Maths Game
+---
+
+## The simple math addition tool that I have made.
+
 <h1>Enter the Answer as fast as you can</h1>
-<h2># {{qnumber}}<br> The question is {{question}}</h2>
+<h2>Question number : {{qnumber}}<br> The question is {{question}}</h2>
 <form action="/check" method= "GET">
     <input type="hidden" id = "qnumber" name="qnumber" value="{{qnumber}}">
     <label for="answer">Enter The Answer : </label><br> 
