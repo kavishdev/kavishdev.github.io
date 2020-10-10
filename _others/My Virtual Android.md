@@ -31,16 +31,16 @@ The steps for setup are :
           
 2.Create a virtual Device.  
 
->2.1 Select the "Configure" menu from the bottom.  
->2.2 Select AVD manager from the drop-down menu .  
->2.3 Click on " Create Virtual Device "  
->2.4 Select the type of device that you want.  
->2.5 Select the Device that you want to create.  
->2.6 Change the device name(optional).  
->2.7 Select/Download the android version that you want.  
->2.8 Click on Finish  
+   2.1 Select the "Configure" menu from the bottom.  
+   2.2 Select AVD manager from the drop-down menu .  
+   2.3 Click on " Create Virtual Device "  
+   2.4 Select the type of device that you want.  
+   2.5 Select the Device that you want to create.  
+   2.6 Change the device name(optional).  
+   2.7 Select/Download the android version that you want.  
+   2.8 Click on Finish  
 
 3.Run Virtual Device  
-> 3.1 Click the play button.    
+   3.1 Click the play button.    
 
 4 Enjoy 🙂  
