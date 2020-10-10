@@ -14,16 +14,16 @@ The steps for setup are :
     1.1
     If on linux :  
     
-    >extract the downloaded file and run the following command on terminal
+    extract the downloaded file and run the following command on terminal
     
-    >```
+    ```
     cd /path/to/extracted/folder/bin  
     ./studio.sh
-    >```  
+    ```  
     
     If on windows : 
 
-    >Run the .exe file
+    Run the .exe file
     
     If on Mac OS open and attach the dmg file by double clicking it and drag and drop the ```Android Studio``` application (Android Studio.app) to the link in the     dmg file
           
