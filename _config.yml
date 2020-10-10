@@ -11,8 +11,6 @@ collections:
   python:
     output: true
   others:
-    output: true       
-  static:
     output: true
 
 exclude:

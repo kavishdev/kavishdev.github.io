@@ -1,3 +1,0 @@
-session1.md
-session2.md
-session3.md

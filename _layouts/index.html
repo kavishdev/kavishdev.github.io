@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Kavish">
 	<meta name="description" content="Personal blog by Kavish #kid #python #programming">
-	<title>Kavish's blog </title>
+	<title>Kavish's blog : {{ page.title }} </title>
 
 	<link rel="icon" href="/static/favicon.png">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
@@ -14,10 +14,21 @@
 	<link rel="stylesheet" href="/static/milligram.min.css">
 	<link rel="stylesheet" href="/static/main.css">
 	<link rel="stylesheet" href="/static/default.css">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180267057-1"></script>
+	
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-180267057-1');
+	</script>
 
 	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> -->
-	</script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> 
+	</script> -->
 
 </head>
 
@@ -52,15 +63,17 @@
 						<a class="navigation-link" href="#popover-support2" data-popover>Python</a>
 						<div class="popover" id="popover-support2">
 							<ul class="popover-list">
-								<!-- <li class="popover-item"><a class="popover-link" target="_self" href="/python?session=1" title="Session 1">Session 1</a></li>
+
+
+								{% for post in site.python %}
+								<li class="popover-item"><a class="popover-link" target="_self" href="{{ post.url }}"
+										title={{ post.title }}>{{ post.title }}</a></li>
+								{% endfor %}
+
+								<!-- <li class="popover-item"><a class="popover-link" target="_self" href="/python?session=1" title="Session 1">Session 1</a></li>s
 									<li class="popover-item"><a class="popover-link" target="_self" href="/python?session=2" title="Session 2">Session 2</a></li>
 									<li class="popover-item"><a class="popover-link" target="_self" href="/python?session=3" title="Session 3">Session 3</a></li> -->
-						
-								{% for item in menulist %}
-								<li class="popover-item"><a class="popover-link" target="_self"
-										href="/python/{{loop.index}}" title="Session {{loop.index}}">Session
-										{{loop.index}}</a></li>
-								{% endfor %}
+
 
 							</ul>
 						</div>
@@ -69,14 +82,13 @@
 						<a class="navigation-link" href="#popover-support3" data-popover>Others</a>
 						<div class="popover" id="popover-support3">
 							<ul class="popover-list">
-								<li class="popover-item"><a class="popover-link" target="_self" href="/others/setup-virtual-android" title="How to setup virtual android">Session 1</a></li>
-								<!-- <li class="popover-item"><a class="popover-link" target="_self" href="/setup-android-things" title="How to setup android things on Raspberry pi 3">Session 1</a></li> -->
-								<!-- <li class="popover-item"><a class="popover-link" target="_self" href="/python?session=2" title="Session 2">Session 2</a></li>
-								<li class="popover-item"><a class="popover-link" target="_self" href="/python?session=3" title="Session 3">Session 3</a></li> -->
-								<!-- {% for item in menulist %}
-								<li class="popover-item"><a class="popover-link" target="_self"
-										href="/others/{{loop.index}}" title="{{loop.index}}">{{loop.index}}</a></li>
-								{% endfor %}	  -->
+								{% for post in site.others %}
+								<li class="popover-item"><a class="popover-link" target="_self" href="{{ post.url }}"
+										title={{ post.title }}>{{ post.title }}</a></li>
+								{% endfor %}
+
+
+								<!-- <li class="popover-item"><a class="popover-link" target="_self" href="/others/setup-virtual-android" title="How to setup virtual android">Session 1</a></li> -->
 							</ul>
 						</div>
 					</li>
@@ -85,13 +97,13 @@
 		</nav>
 		<br>
 		<section class="container" id="mdcontent">
-			{% if login %}		
-			{% if editurl %}	
-			<a target="_self" href="{{editurl}}" >edit</a></li>
+			{% if login %}
+			{% if editurl %}
+			<a target="_self" href="{{editurl}}">edit</a></li>
 			{% endif %}
 			{% endif %}
 			</br>
-			{{ text|safe }}
+			{{content}}
 		</section>
 
 		<footer class="footer">
