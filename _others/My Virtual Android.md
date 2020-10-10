@@ -25,7 +25,9 @@ The steps for setup are :
 
     Run the .exe file
     
-    If on Mac OS open and attach the dmg file by double clicking it and drag and drop the ```Android Studio``` application (Android Studio.app) to the link in the     dmg file
+    If on Mac OS :
+    open and attach the dmg file by double clicking it and drag and drop the ```Android Studio``` application (Android Studio.app) to the link in the 
+    dmg file.
           
 2.Create a virtual Device.  
 
