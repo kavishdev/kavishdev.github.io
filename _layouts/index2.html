@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Kavish">
+	<meta name="description" content="Personal blog by Kavish #kid #python #programming">
+	<title>Kavish's blog </title>
+
+	<link rel="icon" href="/static/favicon.png">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+	<link rel="stylesheet" href="/static/normalize.css">
+	<link rel="stylesheet" href="/static/milligram.min.css">
+	<link rel="stylesheet" href="/static/main.css">
+	<link rel="stylesheet" href="/static/default.css">
+
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> -->
+	</script>
+
+</head>
+
+<body>
+
+	<main class="wrapper">
+
+		<nav class="navigation">
+			<section class="container">
+				<a class="navigation-title" style="width:24px;" href="/">
+					<img src="/static/favicon.png" alt="" width="24px">
+
+
+					<h1 class="title">Kavish's Blog {{login|safe}} </h1>
+				</a>
+				<ul class="navigation-list float-right">
+					<li class="navigation-item">
+						<a class="navigation-link" href="/aboutme" target="_self">About Me</a>
+					</li>
+					<li class="navigation-item">
+						<a class="navigation-link" href="#popover-support" data-popover>Connect</a>
+						<div class="popover" id="popover-support">
+							<ul class="popover-list">
+								<li class="popover-item"><a class="popover-link" target="_self"
+										href="https://github.com/kavishdev" title="Github">Github</a></li>
+								<li class="popover-item"><a class="popover-link" target="_self"
+										href="https://kavishdevar.wordpress.com" title="Wordpress">Wordpress</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="navigation-item">
+						<a class="navigation-link" href="#popover-support2" data-popover>Python</a>
+						<div class="popover" id="popover-support2">
+							<ul class="popover-list">
+
+
+								{% for post in site.python %}
+								<li class="popover-item"><a class="popover-link" target="_self" href="{{ post.url }}" title={{ post.title}}>{{ post.title | remove: "/python/"}}</a></li>
+								{% endfor %}
+						
+								<!-- <li class="popover-item"><a class="popover-link" target="_self" href="/python?session=1" title="Session 1">Session 1</a></li>
+									<li class="popover-item"><a class="popover-link" target="_self" href="/python?session=2" title="Session 2">Session 2</a></li>
+									<li class="popover-item"><a class="popover-link" target="_self" href="/python?session=3" title="Session 3">Session 3</a></li> -->
+						
+
+							</ul>
+						</div>
+					</li>
+					<li class="navigation-item">
+						<a class="navigation-link" href="#popover-support3" data-popover>Others</a>
+						<div class="popover" id="popover-support3">
+							<ul class="popover-list">
+								{% for post in site.others %}
+								<li class="popover-item"><a class="popover-link" target="_self" href="{{ post.url }}" title={{ post.title}}>{{ post.id | remove: "/others/"}}</a></li>
+								{% endfor %}
+						
+
+								<!-- <li class="popover-item"><a class="popover-link" target="_self" href="/others/setup-virtual-android" title="How to setup virtual android">Session 1</a></li> -->
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</section>
+		</nav>
+		<br>
+		<section class="container" id="mdcontent">
+			{% if login %}		
+			{% if editurl %}	
+			<a target="_self" href="{{editurl}}" >edit</a></li>
+			{% endif %}
+			{% endif %}
+			</br>
+			{{content}}
+		</section>
+
+		<footer class="footer">
+			<section class="container">
+			</section>
+		</footer>
+
+	</main>
+	<script src="https://milligram.io/scripts/main.js"></script>
+	<!-- <script src="/static/main.js"></script> -->
+
+</body>
+
+</html>
