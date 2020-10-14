@@ -12,6 +12,8 @@ collections:
     output: true
   others:
     output: true
+  stories:
+    output: true
 
 exclude:
   - bower_components
