@@ -92,6 +92,20 @@
 							</ul>
 						</div>
 					</li>
+					<li class="navigation-item">
+						<a class="navigation-link" href="#popover-support4" data-popover>Stories</a>
+						<div class="popover" id="popover-support4">
+							<ul class="popover-list">
+								{% for post in site.stories %}
+								<li class="popover-item"><a class="popover-link" target="_self" href="{{ post.url }}"
+										title={{ post.title }}>{{ post.title }}</a></li>
+								{% endfor %}
+
+
+								<!-- <li class="popover-item"><a class="popover-link" target="_self" href="/others/setup-virtual-android" title="How to setup virtual android">Session 1</a></li> -->
+							</ul>
+						</div>
+					</li>
 				</ul>
 			</section>
 		</nav>
