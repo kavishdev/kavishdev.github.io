@@ -1,6 +1,6 @@
 ---
 layout: index
-title: A deed is always returned
+title: A deed is always returned.
 ---
 # A deed is always returned
 
