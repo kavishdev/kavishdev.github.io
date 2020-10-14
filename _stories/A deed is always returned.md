@@ -26,5 +26,3 @@ Vaidji! Our family has settled in England. Only one of my widowed sisters lives 
 Vaidji's eyes opened in surprise and he spoke in a very slow voice, "Krishnalalji! I don't understand what you are saying, what is this, return of my deeds? . Look at the list of the thing for what I had to collect money! And Vaidji opened the letter and thanked Krishnalalji. Everyone present was astonished to see that "Dowry goods" was written in front of, "This work belongs to **fate**!" Vaidji spoke in a trembling voice, Krishnalalji! Believe me, it has happened so far that my wife has written the requirement on the letter and the **fate** arranged it on the same day! Listening to you, it seems that you knew what my wife is going to write already. Wow ! I am really surprised for my **fate**. You are great, you are merciful.
 
 Vaidji further said, thanks God for waking up in the morning, thank you for having a good day in the evening, and thank you for sleeping at night.
-
-If you forward it, others will be able to read it. ✍️ 🙏🙏
