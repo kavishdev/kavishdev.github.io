@@ -1,3 +1,7 @@
+---
+layout: index
+title: A Terrifying Holiday Trip
+---
 # A Terrifying Holiday Trip  
 
 It was a nice and relaxing day. The Family of Dr. Reyansh Sharma had went out for a holiday trip to Ahmedabad and then to the birth place of Mahatma Gandhi — the city of Porbandar. Before reaching Porbandar, their trip had been delightful in Ahmedabad where they enjoyed their trip. After they settled in their luxurious room of the hotel that was situated in a remote place, Dr. Sharma decided to take bath in bathtub. When he entered the bathroom, he heard a very frightening sound which he ignored many times but the voice ‘khi-khi-khi-khi-come-come-come’ still came. He got frightened and screamed ‘Help! There is a gh...gh..gho..gho...ghost that is making weird noises in the bath....’. Thereafter, his wife Mrs. Sharma, screamed and fell on the ground, for she had fainted. Just after, their son Ronal ran to him and got to know that he had fainted too! 
