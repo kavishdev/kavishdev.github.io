@@ -2,3 +2,4 @@
 Gemfile.lock
 run
 _site
+.DS_Store
