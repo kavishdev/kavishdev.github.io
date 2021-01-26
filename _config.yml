@@ -14,8 +14,8 @@ collections:
     output: true
   stories:
     output: true
-  cyber-bullying:
-    output: true
+  # cyber-bullying:
+  #   output: true
 
 exclude:
   - bower_components
